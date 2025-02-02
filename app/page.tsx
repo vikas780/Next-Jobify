@@ -2,7 +2,7 @@ import { Button } from '@/components/ui/button'
 import logo from '@/assets/logo.svg'
 import main from '@/assets/main.svg'
 import Image from 'next/image'
-import Link from 'next/link'
+import { SignInButton, SignedOut } from '@clerk/nextjs'
 
 export default function Home() {
   return (
@@ -12,18 +12,20 @@ export default function Home() {
       </header>
       <section className=' sm:grid grid-cols-2 gap-10'>
         <div className='flex flex-col items-start justify-center'>
-          <h1 className='text-3xl mt-28  lg:text-6xl font-bold mb-6'>
+          <h1 className='text-4xl mt-28  lg:text-6xl font-bold mb-6'>
             Job Tracking App
           </h1>
-          <p className='text-lg lg:leading-loose max-w-md mt-4'>
+          <p className='text-xl leading-8 lg:leading-8 max-w-md mt-4'>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore
             mollitia iure magnam, sint recusandae tempore voluptatum aliquam
             modi necessitatibus laboriosam, eveniet labore, iste pariatur ab.
             Obcaecati quo vitae non impedit.
           </p>
-          <Button asChild className='mt-4'>
-            <Link href='/add-job'>Get Started</Link>
-          </Button>
+          <SignedOut>
+            <Button asChild className='mt-10'>
+              <SignInButton>Get started</SignInButton>
+            </Button>
+          </SignedOut>
         </div>
         <Image
           src={main}
