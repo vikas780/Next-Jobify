@@ -22,7 +22,7 @@ export default function Home() {
             Obcaecati quo vitae non impedit.
           </p>
           <SignedOut>
-            <Button asChild className='mt-10'>
+            <Button asChild className='mt-10 p-5'>
               <SignInButton>Get started</SignInButton>
             </Button>
           </SignedOut>
