@@ -15,8 +15,8 @@ import {
 
 export function AppSidebar() {
   return (
-    <Sidebar variant='inset'>
-      <SidebarContent>
+    <Sidebar variant='inset' collapsible='icon'>
+      <SidebarContent aria-label='Navigation Menu'>
         <SidebarGroup className='p-4'>
           <Image src={logo} alt='Logo image' />
 
