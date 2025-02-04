@@ -6,6 +6,7 @@ import {
   SidebarInset,
 } from '@/components/ui/sidebar'
 import { AppSidebar } from '@/components/ui/Appsidebar'
+import ThemeSwitcher from '@/components/ThemeSwitcher'
 
 export const DashboardLayout = ({
   children,
@@ -15,17 +16,20 @@ export const DashboardLayout = ({
   return (
     <SidebarProvider>
       <AppSidebar />
-      <SidebarInset className='bg-[#0f141e] text-white'>
-        <header className=' flex items-center justify-between h-16 shrink-0  gap-2 border-b p-4'>
+
+      <SidebarInset className='dark:bg-[#0f141e] bg-[#f2f2f2] '>
+        <header className=' flex items-center justify-between h-16 shrink-0  gap-2  p-4 shadow-md'>
           <SidebarTrigger className='-ml-1' />
+
           <div className='flex gap-4 items-center'>
             <SignedIn>
               <UserButton />
               {/* 🔹 Redirect to "/" after signing out */}
-              <Button asChild className='bg-gray-700'>
+              <Button asChild>
                 <SignOutButton redirectUrl='/' />
               </Button>
             </SignedIn>
+            <ThemeSwitcher />
           </div>
         </header>
         <main>{children}</main>
