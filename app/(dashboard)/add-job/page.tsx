@@ -1,9 +1,10 @@
+import CreateJobForm from '@/components/CreateJobForm'
 import React from 'react'
 
 const AddJob = () => {
   return (
-    <div>
-      <h2>This is add job page</h2>
+    <div className='px-20 mt-4'>
+      <CreateJobForm />
     </div>
   )
 }
